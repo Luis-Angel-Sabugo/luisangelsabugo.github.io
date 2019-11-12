@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="images\icono.ico">
+		<title>video</title>
+	</head>
+	<body style="background-color:#01579B;">
+		<table align=center >
+			<tr>	
+				<td><img src="images\logo.jpg"></td><td style="color:#FFFFFF;font-size:100px;"><font face="Comic Sans MS">DAM TRAVEL</font></td>
+			</tr>
+		</table>
+		<table align=center>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="index.html" style="color:#000000"><b>INICIO</b></a></face></td>
+			</tr>
+		</table>
+		<center>
+		<video src="videos\video1.mp4" width="909" height="645" controls>
+		</video>
+		</center>
+	</body>
+</html>
