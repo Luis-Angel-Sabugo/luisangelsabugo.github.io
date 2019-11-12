@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="images\icono.ico">
+		<title>Cruceros</title>
+	</head>
+	<body style="background-color:#01579B;">
+		<table align=center >
+			<tr>	
+				<td><img src="images\logo.jpg"></td><td style="color:#FFFFFF;font-size:100px;"><font face="Comic Sans MS">DAM TRAVEL</font></td>
+			</tr>
+		</table><br><br>
+		<table width="50%" align=center>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="index.html" style="color:#000000"><b>INICIO</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="ofertas.html" style="color:#000000"><b>OFERTAS</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="paquetes.html" style="color:#000000"><b>PAQUETES</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="vuelos.html" style="color:#000000"><b>VUELOS</b></a></face></td>
+			</tr>
+		</table><br>
+		<p align=center style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><b><u>CRUCEROS</u></b></font></p>
+		<table width="50%" align=center cellpadding="30">
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros1.jpg"><br><b><u>Nuevo producto. Cruceros Verano 2020</b><br></u>El próximo año 2020 MSC viene con la promoción de bebidas ilimitadas*. Una oportunidad única para hacer tu crucero más completo. Vive el destino que siempre has soñado.<br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros2.jpg"><br><b><u>Vente de estreno</b><br></u>En Costa Cruceros nos traen una temporada emocionante, conoce Emiratos, descubre el Mediterraneo a bordo de su increible nuevo barco. Prepara ya tu vacaciones del año que viene. No dejes pasar la oportunidad de vivir las vacaciones de tu vida.<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros3.jpg"><br><b><u>Los mayores viajeros – Viajeros +60</b><br></u>La selección de los mejores cruceros a precios especiales y con ventajas exclusivas para nuestros mayores viajeros.<br><br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros4.jpg"><br><b><u>Solo de pensarlo, emociona</b><br></u>¿Por qué elegir si puedes tenerlo todo? Royal Caribbean te ofrece unas vacaciones en crucero extraordinarias con las mejores promociones. Aprovéchate de nuestros descuentos de Crucero Fantástico y además, ahora, ¡niños gratis!<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros5.jpg"><br><b><u>Cruceros de Otoño</b><br></u>Hazte una escapada este otoño y desconecta de tu vida diaria. Te ofrecemos opciones de cruceros para que el año no se te haga tan largo. Aprovéchalas.<br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\cruceros6.jpg"><br><b><u>Cruceros navideños</b><br></u>Descubre todas las opciones que te ofrecemos para viajar en Navidad. Mediterráneo, Dubái, Caribe y fluviales son alguno de los destinos elegidos. ¡No te los puedes perder!<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+		</table>
+		<center>
+		<a name="formu">
+		<form style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS" action="#" method="post">
+		<label for="nombre">Nombre: </label>
+              <input type="text" id="nombre"><br>
+		<label for="apellido">Apellido: </label>
+              <INPUT type="text" id="apellido"><br>
+		<label for="email">email: </label>
+				<input type="text" id="email"><br>
+			     Deja un mensaje:<br>
+					<textarea name="mensaje" rows="10" cols="40"></textarea><br>
+			<input type="submit" value="Enviar"> <input type="reset">
+		</form>
+		</a>
+		</center>
+	</body>
+</html>
