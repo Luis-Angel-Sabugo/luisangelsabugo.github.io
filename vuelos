@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="images\icono.ico">
+		<title>Vuelos</title>
+	</head>
+	<body style="background-color:#01579B;">
+		<table align=center >
+			<tr>	
+				<td><img src="images\logo.jpg"></td><td style="color:#FFFFFF;font-size:100px;"><font face="Comic Sans MS">DAM TRAVEL</font></td>
+			</tr>
+		</table><br><br>
+		<table width="50%" align=center>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="index.html" style="color:#000000"><b>INICIO</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="ofertas.html" style="color:#000000"><b>OFERTAS</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="paquetes.html" style="color:#000000"><b>PAQUETES</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="cruceros.html" style="color:#000000"><b>CRUCEROS</b></a></face></td>
+			</tr>
+		</table><br>
+		<p align=center style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><b><u>VUELOS</u></b></font></p>
+		<table width="50%" align=center cellpadding="30">
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo1.jpg"><br><b><u>Londres ida/vuelta</b><br></u>Ciudad localizada en Inglaterra, tiene un gran número de atractivos para el deleite de los viajeros extranjeros.<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo2.jpg"><br><b><u>Lanzarote ida/vuelta</b><br></u>La isla reúne en su mesa los mejores ingredientes del Atlántico, marinados con excelentes vinos y malvasías.<br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo3.jpg"><br><b><u>Menorca ida/vuelta</b><br></u>La isla tranquila del archipiélago balear, más sencilla que sus islas vecinas, ofrece maravillosas playas y calas rocosas.<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo4.jpg"><br><b><u>Malta ida/vuelta</b><br></u>Es conocida como la joya del Mediterráneo por sus magníficas costas.<br><br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo5.jpg"><br><b><u>Fuerteventura ida/vuelta</b><br></u>Tiene para todos los turistas una increible variedad de opciones para pasarlo bien durante los días o las semanas que duren tus vacaciones.<br><br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\vuelo6.jpg"><br><b><u>Estados Unidos ida/vuelta</b><br></u>Además de lo interesante de la belleza de muchos de sus monumentos y atractivos, el verdadero tesoro de Estados Unidos es la majestuosidad de su naturaleza, probablemente el mayor espectáculo del mundo.<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+		</table>
+		<center>
+		<a name="formu">
+		<form style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS" action="#" method="post">
+		<label for="nombre">Nombre: </label>
+              <input type="text" id="nombre"><br>
+		<label for="apellido">Apellido: </label>
+              <INPUT type="text" id="apellido"><br>
+		<label for="email">email: </label>
+				<input type="text" id="email"><br>
+			     Deja un mensaje:<br>
+					<textarea name="mensaje" rows="10" cols="40"></textarea><br>
+			<input type="submit" value="Enviar"> <input type="reset">
+		</form>
+		</a>
+		</center>
+	</body>
+</html>
