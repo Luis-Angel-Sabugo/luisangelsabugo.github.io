@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="images\icono.ico">
+		<title>Ofertas</title>
+	</head>
+	<body style="background-color:#01579B;">
+		<table align=center >
+			<tr>	
+				<td><img src="images\logo.jpg"></td><td style="color:#FFFFFF;font-size:100px;"><font face="Comic Sans MS">DAM TRAVEL</font></td>
+			</tr>
+		</table><br><br>
+		<table width="50%" align=center>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="index.html" style="color:#000000"><b>INICIO</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="paquetes.html" style="color:#000000"><b>PAQUETES</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="cruceros.html" style="color:#000000"><b>CRUCEROS</b></a></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><a href="vuelos.html" style="color:#000000"><b>VUELOS</b></a></face></td>
+			</tr>
+		</table><br>
+		<p align=center style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><b><u>OFERTAS</u></b></font></p>
+		<table width="50%" align=center cellpadding="30">
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta1.jpg"><br><b><u>Maravillas de Croacia y Bosnia</b><br></u>8 días / 7 noches con 3 noches en Dubrovnik, 1 en Mostar, 2 en Zadar y 1 en Zagreb. Vuelos, hoteles, visitas y 13 comidas.<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta2.jpg"><br><b><u>Túnez Misterioso</b><br></u>8 días/7 noches de circuito con vuelos, alojamiento en Gammarth, Tozeur/Nefta, Douz y Djerba/Gabes/Matmata<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta3.jpg"><br><b><u>Egipto para todos</b><br></u>8 días / 7 noches, crucero por el Nilo en Pensión Completa y estancia en El Cairo en Alojamiento y Desayuno. Visitas<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta4.jpg"><br><b><u>Punta Cana al mejor precio</b><br></u>¡Vuelo + hotel en régimen de Todo Incluido + traslados!<br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+			<tr>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta5.jpg"><br><b><u>Riviera Maya todo incluido</b><br></u>¡Vuelos + hotel en régimen de Todo Incluido + traslados!<br><br><br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+				<td style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS"><img src="images\oferta6.jpg"><br><b><u>Lo Mejor de París y Países Bajos con crucero por el Rhin</b><br></u>8días/7noches, 3 noches en París, 1 en Bruselas, 2 en Ámsterdam y 1 en Frankfur<br><div align=right><a href="#formu" style="color:#000000"><b><i>MÁS INFORMACIÓN</b></i></a></div></face></td>
+			</tr>
+		</table>
+		<center>
+		<a name="formu">
+		<form style="color:#FFFFFF; font-size:30px;"><font face="Comic Sans MS" action="#" method="post">
+		<label for="nombre">Nombre: </label>
+              <input type="text" id="nombre"><br>
+		<label for="apellido">Apellido: </label>
+              <INPUT type="text" id="apellido"><br>
+		<label for="email">email: </label>
+				<input type="text" id="email"><br>
+			     Deja un mensaje:<br>
+					<textarea name="mensaje" rows="10" cols="40"></textarea><br>
+			<input type="submit" value="Enviar"> <input type="reset">
+		</form>
+		</a>
+		</center>
+	</body>
+</html>
