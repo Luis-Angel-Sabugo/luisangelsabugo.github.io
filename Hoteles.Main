@@ -1,0 +1,481 @@
+package practicafinal;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+	public static Scanner sc; 
+	public static void main(String[] args) {
+		ArrayList<Habitacion> habitaciones=new ArrayList<Habitacion>();
+		try {
+		String respuesta= null;
+		Main.sc=new Scanner(System.in);
+		Hab_Doble h1=new Hab_Doble(0,"Doble",100,true);
+		Habitacion h2=new Habitacion(1,"Individual",0);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		habitaciones.add(h1);
+		habitaciones.add(h2);
+		Boolean control=false;
+		do {
+		System.out.println("Elige una opcion");
+		System.out.println("1-Gestion de habitaciones");
+		System.out.println("2-Gestion de reservas");
+		System.out.println("3-Salir");
+
+		switch(sc.nextInt()) {
+		case 1:
+			System.out.println("Elige una opcion");
+			System.out.println("1-Listado de habitaciones");
+			System.out.println("2-Informacion de habitaciones");
+			System.out.println("3-Actualizar datos de la habitacion");
+			System.out.println("4-Agregar habitacion");
+			System.out.println("5-Eliminar habitacion");
+			System.out.println("6-Habitaciones libres");
+			System.out.println("7-Salir");
+			
+			switch(Main.sc.nextInt()) {
+				case 1:
+						for(int i=0;i<habitaciones.size();i++) {
+							System.out.println("####################################################");
+							System.out.println("Numero de habitacion: "+habitaciones.get(i).getNumerohab());
+							System.out.println("Tipo de habitacion: "+habitaciones.get(i).getTipo());
+							System.out.println("Precio de habitacion: "+habitaciones.get(i).getPrecio());
+							if(habitaciones.get(i).getTipo().equals("Doble"))
+							{
+								Hab_Doble d1=new Hab_Doble();
+								d1=(Hab_Doble) habitaciones.get(i);
+								if(d1.isAseo()) {
+									System.out.println("Habitacion comparte aseo");
+								}
+								else if(d1.isAseo()==false) {
+									System.out.println("Habitacion con aseo independiente");
+								}
+							}
+							}
+							if(habitaciones.size()==0) {
+								System.out.println("NO HAY HABITACIONES REGISTRADAS");
+							}
+							break;
+				case 2:System.out.println("ESCRIBE EL NUMERO DE HABITACION DE LA QUE DESEAS INFORMACION:");
+				int numhab = Main.sc.nextInt();
+				for(int i=0;i<habitaciones.size();i++) {
+					if (habitaciones.get(i).getNumerohab()==numhab) {
+						System.out.println("NUMERO DE HABITACION: "+habitaciones.get(i).getNumerohab());
+						System.out.println("TIPO DE HABITACION: "+habitaciones.get(i).getTipo());
+						System.out.println("PRECIO DE LA HABITACION: "+habitaciones.get(i).getPrecio());
+						if(habitaciones.get(i).getTipo().equals("Doble"))
+						{
+							Hab_Doble nhd=new Hab_Doble();
+							nhd=(Hab_Doble) habitaciones.get(i);
+							if(nhd.isAseo()) {
+								System.out.println("HABITACION COMPARTE ASEO");
+							}
+							else if(nhd.isAseo()==false) {
+								System.out.println("HABITACION CON ASEO INDEPENDIENTE");
+							}
+						}
+						control=true;
+					}
+				}
+				if(!control)
+					System.out.println("LA HABITACION NO EXISTE"); 
+					break;
+				case 3:System.out.println("ESCRIBE EL NUMERO DE HABITACION QUE DESEAS MODIFICAR");
+					numhab = Main.sc.nextInt();
+					control=false;
+					for(int i=0;i<habitaciones.size();i++) {
+						if (habitaciones.get(i).getNumerohab()==numhab) {
+							System.out.println("INTRODUCE EL NUEVO NUMERO DE HABITACION");
+							int nuevoNumerohab=Main.sc.nextInt();
+							habitaciones.get(i).setNumerohab(nuevoNumerohab);
+							System.out.println("INTRODUCE EL NUEVO TIPO DE HABITACION:");
+							System.out.println("1-HABITACION INDIVIDUAL");
+							System.out.println("2-HABITACION DOBLE");
+							System.out.println("3-HABITACION FAMILIAR");
+							System.out.println("4-HABITACION SUITE");
+							String nuevoTipo = null;
+							switch(Main.sc.nextInt()) {
+								case 1:
+									nuevoTipo="Individual";
+									break;
+								case 2:
+									nuevoTipo="Doble";
+									break;
+								case 3:
+									nuevoTipo="Familiar";
+									break;
+								case 4:
+									nuevoTipo="Suite";
+									break;
+							}
+								
+							habitaciones.get(i).setTipo(nuevoTipo);
+							System.out.println("INTRODUCE EL NUEVO PRECIO DE LA HABITACION:");
+							double nuevoPrecio=Main.sc.nextDouble();
+							habitaciones.get(i).setPrecio(nuevoPrecio);
+							control=true;
+							break;
+						}
+					}
+					if(!control)
+					System.out.println("LA HABITACION NO EXISTE");
+					break;
+				case 4: System.out.println("ESCRIBE EL NUMERO DE HABITACION QUE QUIERES AÑADIR");
+					int nuevoNumero=Main.sc.nextInt();
+					System.out.println("QUE TIPO DE HABITACION QUE QUIERES AÑADIR?");
+					System.out.println("1-HABITACION INDIVIDUAL");
+					System.out.println("2-HABITACION DOBLE");
+					System.out.println("3-HABITACION FAMILIAR");
+					System.out.println("4-HABITACION SUITE");
+					System.out.println("5-SALIR");
+						switch(Main.sc.nextInt()) {
+							case 1:
+								String nuevoTipo="Individual";
+								System.out.println("ESCRIBE PRECIO DE LA HABITACION QUE QUIERES AÑADIR ");
+								double nuevoPrecio=Main.sc.nextDouble();
+								Habitacion nh=new Habitacion (nuevoNumero,nuevoTipo,nuevoPrecio);
+								habitaciones.add(nh);
+								break;
+							case 2:
+								Boolean Aseo=false;
+								nuevoTipo="Doble";
+								System.out.println("ESCRIBE PRECIO DE LA HABITACION QUE QUIERES AÑADIR ");
+								nuevoPrecio=Main.sc.nextDouble();
+								System.out.println("LA HABITACION COMPARTE ASEO? s/n ");
+								respuesta=Main.sc.next();
+								if(respuesta=="s") {
+									Aseo=true;
+									}
+								Hab_Doble nhd=new Hab_Doble (nuevoNumero,nuevoTipo,nuevoPrecio,Aseo);
+								habitaciones.add(nhd);
+								System.out.println("HABITACION AÑADIDA CON EXITO");
+								break;
+							case 3:
+								nuevoTipo="Familiar";
+								System.out.println("ESCRIBE PRECIO DE LA HABITACION QUE QUIERES AÑADIR ");
+								nuevoPrecio=Main.sc.nextDouble();
+								Habitacion nhf=new Habitacion (nuevoNumero,nuevoTipo,nuevoPrecio);
+								habitaciones.add(nhf);
+								break;
+							case 4:
+								nuevoTipo="Suite";
+								System.out.println("ESCRIBE PRECIO DE LA HABITACION QUE QUIERES AÑADIR ");
+								nuevoPrecio=Main.sc.nextDouble();
+								Habitacion nhs=new Habitacion (nuevoNumero,nuevoTipo,nuevoPrecio);
+								habitaciones.add(nhs);
+								break;
+							case 5:
+								return;
+						}
+						break;
+				case 5:
+					do {
+					System.out.println("POR FAVOR INTRODUCE EL NUMERO DE LA HABITACION QUE QUIERES ELIMINAR");
+					int borrar=sc.nextInt();
+						for(int i=0;i<habitaciones.size();i++) {
+							if (habitaciones.get(i).getNumerohab()==borrar) {
+								habitaciones.remove(i);
+								control=true;
+								break;
+							}
+							
+						}
+						if(!control) {
+							
+							System.out.println("NO EXISTE ESE NUMERO DE HABITACION");
+							
+						}
+						control=false;
+						System.out.println("QUIERES ELIMINAR OTRA HABITACION? s/n");
+							respuesta=sc.next();
+					}while (respuesta.equalsIgnoreCase("s"));
+					
+				case 6:
+					System.out.println("INTRODUCE EL TIPO DE HABITACIONES LIBRES QUE QUIERE VER (INDIVIDUAL,FAMILIAR,DOBLE,SUITE)");
+					String tipo1=sc.next();
+					System.out.println("INTRODUCE LA FECHA DE INICIO DE LA RESERVA (FORMATO DD/MM/AAAA)");
+					String date1=sc.next();
+					System.out.println("Introduce la fecha de fin de la reserva (Formato dd/mm/aaaa");
+					String date2=sc.next();
+					Date fecha1=null;
+					Date fecha2=null;
+					try {
+						fecha1= sdf.parse(date1);
+						fecha2=sdf.parse(date2);
+					}
+					catch (ParseException e){
+						System.out.println("Formato de fecha no valido el formato correcto es: dd/mm/aaaa");
+					}
+					for(int i=0;i<habitaciones.size();i++) {
+						if (habitaciones.get(i).getTipo().equalsIgnoreCase(tipo1)){
+							for(int j=0;j<habitaciones.get(i).getReservas().size();j++){
+								if (habitaciones.get(i).getReservas().get(j).getfechIn().compareTo(fecha2)>=0||(habitaciones.get(i).getReservas().get(j).getfechFin().compareTo(fecha1)<=0)) {
+									System.out.println("####################################################");
+									System.out.println("NUMERO DE HABITACION: "+habitaciones.get(i).getNumerohab());
+									System.out.println("TIPO DE HABITACION: "+habitaciones.get(i).getTipo());
+									System.out.println("PRECIO DE LA HABITACION: "+habitaciones.get(i).getPrecio());
+									if(habitaciones.get(i).getTipo().equalsIgnoreCase("Doble"))
+									{
+										Hab_Doble d1=new Hab_Doble();
+										d1=(Hab_Doble) habitaciones.get(i);
+										if(d1.isAseo()) {
+											System.out.println("HABITACION COMPARTE ASEO");
+										}
+										else if(d1.isAseo()==false) {
+											System.out.println("HABITACION CON ASEO INDEPENDIENTE");
+										}	
+									}
+									
+							
+								}
+								else {
+								
+								}
+						
+								
+							}
+						}
+					}
+
+
+					break;
+						
+				case 7:
+					return;
+			
+				
+			}
+		
+			break;
+		case 2:System.out.println("ELIGE UNA OPCION");
+				System.out.println("1-LISTADO DE RESERVAS");
+				System.out.println("2-LISTADO DE RESERVAS POR FECHA DE INICIO");
+				System.out.println("3-CREAR RESERVA");
+				System.out.println("4-ELIMINAR RESERVA POR FECHA DE INICIO");
+				System.out.println("5-MODIFICAR RESERVA");
+				System.out.println("6-GENERAR FACTURA");
+				System.out.println("7-SALIR");
+				
+					switch(Main.sc.nextInt()) {
+						case 1:
+							for(int i=0;i<habitaciones.size();i++) {
+								habitaciones.get(i).muestrareserva();
+							}
+							break;
+						case 2:
+							System.out.println("Indica el numero de habitacion que quieres comprobar");
+							Integer comphab=sc.nextInt();
+							System.out.println("Indica la fecha de inicio que quieres comprobar (formato dd/mm/aaaa)");
+							String comprobar=sc.next();
+							SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+							Date comprobar1=null;
+							try {
+								comprobar1= sdf1.parse(comprobar);
+							}
+							catch (ParseException e){
+								System.out.println("Formato de fecha no valido el formato correcto es: dd/mm/aaaa");
+							}
+							
+							for(int i=0;i<habitaciones.size();i++) {
+								if(habitaciones.get(i).getNumerohab()==comphab) {
+									if(habitaciones.get(i).getReservas().isEmpty()) {
+										System.out.println("No hay reservas");
+										break;
+									}
+									for(int j=0;j<habitaciones.get(i).getReservas().size();j++) {
+										if(habitaciones.get(i).getReservas().get(j).getfechIn().equals(comprobar1)) {
+											System.out.println("DNI del cliente: "+habitaciones.get(i).getReservas().get(j).getDNI());
+											System.out.println("Fecha final de la reserva"+habitaciones.get(i).getReservas().get(j).getfechFin());
+											
+										}
+										else {
+											System.out.println("No hay reservas para esa fecha");
+										}
+									}
+								}
+								
+							}
+							break;
+						case 3:
+							boolean vipcheck=false;
+							System.out.println("Que tipo de habitacion es?(individual,familiar,doble,suite)");
+							String rtipo=sc.next();
+							if (rtipo.equalsIgnoreCase("suite")) {
+								System.out.println("Es una reserva VIP? s/n");
+								String resvip=sc.next();
+								if(resvip.equalsIgnoreCase("s")) {
+									vipcheck=true;
+								}
+								
+							}
+							System.out.println("INTRODUCE EL NUMERO DE LA HABITACION");
+							int hab_res =Main.sc.nextInt();
+							for(int i=0;i<habitaciones.size();i++) {
+								if (habitaciones.get(i).getNumerohab()==hab_res) {
+									System.out.println("INTRODUCE FECHA DE INICIO DE LA RESERVA (FORMATO DD/MM/AAAA)");
+									String hab_fechIn=Main.sc.next();
+									System.out.println("INTRODUCE FECHA DEL FIN DE LA RESERVA (FORMATO DD/MM/AAAA)");
+									String hab_fechFin=Main.sc.next();
+									Date fecha2 = null;
+									Date fecha1 = null;
+									try {
+										fecha2 = sdf.parse(hab_fechFin);
+										fecha1= sdf.parse(hab_fechIn);
+									} catch (ParseException e) {
+										System.out.println("FORMATO DE FECHA NO VALIDO EL FORMATO CORRECTO ES: DD/MM/AAAA");		
+									}		
+									System.out.println("INTRODUCE EL DNI DEL CLIENTE");
+									String hab_clien=Main.sc.next();
+									boolean cobro;
+									System.out.println("LA HABITACION ESTA PAGADA? s/n");
+									respuesta=Main.sc.next();
+									if(respuesta.equalsIgnoreCase("s")) {
+										 cobro=true;
+									}
+									else {
+										cobro=false;
+									}
+									Reserva res1=new Reserva(hab_res,fecha1,fecha2,hab_clien,cobro,vipcheck);
+									habitaciones.get(i).anadirReserva(res1);
+									
+												}
+									
+											}	
+									break;
+									
+								
+							case 4:	
+								System.out.println("INTRODUCE EL NUMERO DE HABITACION DEL QUE QUIERES ELIMINAR LA RESERVA: ");	
+								int hab_elim=sc.nextInt();
+								System.out.println("Introduce la fecha de inicio de la reserva que quieres eliminar: (Formato dd/mm/aaaa");
+								String fechInElim=sc.next();
+								Date fecha1=null;
+								boolean check=false;
+								try {
+									fecha1= sdf.parse(fechInElim);
+								}catch (ParseException e) {
+									System.out.println("FORMATO DE FECHA NO VALIDO EL FORMATO CORRECTO ES: DD/MM/AAAA");		
+								}
+								for(int i=0;i<habitaciones.size();i++) {
+									if (habitaciones.get(i).getNumerohab()==(hab_elim)) {
+										for(int j=0;j<habitaciones.get(i).getReservas().size();j++) {
+											if(habitaciones.get(i).getReservas().get(j).getfechIn().equals(fecha1)) {
+											habitaciones.get(i).eliminarReserva(j);
+											check=true;
+											}
+										}
+									}
+									
+								}
+								if(check==false) {
+									System.out.println("No se ha encontrado reserva para eliminar");
+								}
+								else {
+									System.out.println("Reserva eliminada correctamente");
+								}
+							
+							break;
+							case 5:
+								System.out.println("Introduce el numero de habitacion para modificar la reserva");
+								Integer num_hab=sc.nextInt();
+								System.out.println("Indica fecha de inicio de la reserva a modificar (Formato dd/mm/aaaa)");
+								String fechaIni=sc.next();
+								System.out.println("Indica la nueva fecha de inicio de la reserva (Formato dd/mm/aaaa)");
+								String nuevoIni=sc.next();
+								System.out.println("Indica la nueva fecha de fin de la reserva (Formato dd/mm/aaaa)");
+								String nuevoFin=sc.next();
+								check=false;
+								Date fecham1=null;
+								Date nfechaIni=null;
+								Date nfechaFin=null;
+								
+								try {
+									fecham1= sdf.parse(fechaIni);
+									nfechaIni=sdf.parse(nuevoIni);
+									nfechaFin=sdf.parse(nuevoFin);
+									
+								}catch (ParseException e) {
+									System.out.println("FORMATO DE FECHA NO VALIDO EL FORMATO CORRECTO ES: DD/MM/AAAA");		
+								}
+								for(int i=0;i<habitaciones.size();i++) {
+									if (habitaciones.get(i).getNumerohab()==(num_hab)) {
+										for(int j=0;j<habitaciones.get(i).getReservas().size();j++) {
+											if(habitaciones.get(i).getReservas().get(j).getfechIn().equals(fecham1)) {
+											habitaciones.get(i).getReservas().get(j).setfechIn(nfechaIni);
+											habitaciones.get(i).getReservas().get(j).setfechFin(nfechaFin);
+											
+											check=true;
+											}
+										}
+									}
+									
+								}
+								break;
+							case 6:
+									System.out.println("Introduce el numero de habitacion del que deseas la factura");
+									Integer numhbfactura=sc.nextInt();
+									System.out.println("Introduce la fecha de inicio de la reserva (formato dd/mm/aaaa))");
+									String fechainiciofactura=sc.next();
+									Date ffechaIni=null;
+									Double preciofinal = null;
+									try {
+										ffechaIni=sdf.parse(fechainiciofactura);
+									}catch (ParseException e) {
+										System.out.println("FORMATO DE FECHA NO VALIDO EL FORMATO CORRECTO ES: DD/MM/AAAA");		
+									}
+									for(int i=0;i<habitaciones.size();i++){
+										if (habitaciones.get(i).getNumerohab()==(numhbfactura)) {
+											System.out.println("numero de habitacion:"+habitaciones.get(i).getNumerohab());
+											for (int j=0;j<habitaciones.get(i).getReservas().size();j++) {
+												System.out.println("DNI del cliente"+habitaciones.get(i).getReservas().get(j).getDNI());
+												System.out.println("Dia de entrada:"+habitaciones.get(i).getReservas().get(j).getfechIn());
+												System.out.println("Dia de salkida:"+habitaciones.get(i).getReservas().get(j).getfechFin());
+												if(habitaciones.get(i).getReservas().get(j).getfechIn().equals(ffechaIni)) {
+													long dias=ChronoUnit.DAYS.between(habitaciones.get(i).getReservas().get(j).getfechIn().toInstant(), habitaciones.get(i).getReservas().get(j).getfechFin().toInstant());
+													preciofinal=(habitaciones.get(i).getPrecio()*dias);
+													System.out.println("El precio final es:"+preciofinal);
+													if (habitaciones.get(i).getTipo().equalsIgnoreCase("doble")) {
+														Hab_Doble habitac_dob = (Hab_Doble)habitaciones.get(i);
+														if(habitac_dob.isAseo(false)) {
+															preciofinal=(preciofinal*0.15)+(preciofinal);
+															
+														}
+														
+													}
+														
+													if (habitaciones.get(i).getReservas().get(j).isVip()==true) {
+														preciofinal=(preciofinal*0.2)+(preciofinal);
+														
+													}
+												}
+											}
+											
+										}
+										
+									}
+									
+									break;
+							case 7:
+								return;
+							}
+							break;
+			case 3:					
+			return;
+		
+		}
+		System.out.println("Quieres salir? s/n");
+		respuesta=Main.sc.next();
+		}while (respuesta.equalsIgnoreCase("n"));
+		}finally {
+			Ficheros.guardardatos(habitaciones);
+			Main.sc.close();
+		}
+		
+	
+	}
+
+}
